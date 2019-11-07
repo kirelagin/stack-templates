@@ -13,26 +13,35 @@ extra-source-files:
   - README.md
 
 default-extensions:
+#  - AllowAmbiguousTypes
 #  - ApplicativeDo
 #  - BangPatterns
 #  - ConstraintKinds
 #  - DataKinds
 #  - DeriveGeneric
+#  - DerivingStrategies
+#  - DerivingVia
   - FlexibleContexts
   - FlexibleInstances
 #  - GADTs
 #  - GeneralizedNewtypeDeriving
+#  - KindSignatures
 #  - LambdaCase
   - MultiParamTypeClasses
 #  - NamedFieldPuns
 #  - OverloadedStrings
 #  - PolyKinds
+#  - QuantifiedConstraints
 #  - RankNTypes
 #  - ScopedTypeVariables
 #  - StandaloneDeriving
 #  - TemplateHaskell
 #  - TupleSections
 #  - TypeApplications
+#  - TypeFamilies
+#  - TypeOperators
+#  - UndecidableInstances
+#  - UndecidableSuperClasses
 
 ghc-options:
   - -Wall
