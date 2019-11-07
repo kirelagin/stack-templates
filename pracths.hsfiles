@@ -1,0 +1,83 @@
+{-# START_FILE README.md #-}
+# {{name}}
+
+Code for the [Practical Haskell][pracths] course.
+
+[pracths]: https://kir.elagin.me/edu/#practical-haskell
+
+{-# START_FILE package.yaml #-}
+name: {{name}}
+version: 0.0.0.0
+
+extra-source-files:
+  - README.md
+
+default-extensions:
+#  - ApplicativeDo
+#  - BangPatterns
+#  - ConstraintKinds
+#  - DataKinds
+#  - DeriveGeneric
+  - FlexibleContexts
+  - FlexibleInstances
+#  - GADTs
+#  - GeneralizedNewtypeDeriving
+#  - LambdaCase
+  - MultiParamTypeClasses
+#  - NamedFieldPuns
+#  - OverloadedStrings
+#  - PolyKinds
+#  - RankNTypes
+#  - ScopedTypeVariables
+#  - StandaloneDeriving
+#  - TemplateHaskell
+#  - TupleSections
+#  - TypeApplications
+
+ghc-options:
+  - -Wall
+  - -Wcompat
+  - -Widentities
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wmissing-home-modules
+  - -Wpartial-fields
+  - -Wredundant-constraints
+  - -Wcpp-undef
+#  - -Wmissing-export-lists
+#  - -Wmonomorphism-restriction
+
+dependencies:
+  - base >= 4.7
+
+library:
+  source-dirs: src
+  dependencies: []
+
+tests:
+  {{name}}-test:
+    main: Test.hs
+    source-dirs: test
+    dependencies:
+      - {{name}}
+      - hedgehog
+      - HUnit
+      - tasty
+      - tasty-hedgehog
+      - tasty-hunit
+    build-tools: tasty-discover:tasty-discover
+
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+
+{-# START_FILE src/Lib.hs #-}
+module Lib
+    ( {- Exports go here -}
+    ) where
+
+-- {- Function definitions go here -}
+
+{-# START_FILE test/Test.hs #-}
+{-# OPTIONS_GHC -F -pgmF tasty-discover -optF --tree-display #-}
