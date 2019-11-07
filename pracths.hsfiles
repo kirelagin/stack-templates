@@ -72,6 +72,11 @@ tests:
       - -rtsopts
       - -with-rtsopts=-N
 
+
+{-# START_FILE .gitignore #-}
+*.cabal
+/.stack-work/
+
 {-# START_FILE src/Lib.hs #-}
 module Lib
     ( {- Exports go here -}
